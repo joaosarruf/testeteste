@@ -25,12 +25,12 @@
       <input type="radio" name="resposta2" value="b">B) Casa de mamãe<br>
     </label>
 
-    <p>Pergunta 3: Qual é a maior cordilheira do mundo?</p>
+    <p>Pergunta 3: O que mais gosto de fazer?</p>
     <label>
-      <input type="radio" name="resposta3" value="a">A) Andes<br>
+      <input type="radio" name="resposta3" value="a">A) ficar de bobs<br>
     </label>
     <label>
-      <input type="radio" name="resposta3" value="b">B) Himalaias<br>
+      <input type="radio" name="resposta3" value="b">B) estudar 😝<br>
     </label>
 
     <button type="submit" class="botao botao-submit" onclick="verificarRespostas(event)">Enviar</button>
@@ -48,7 +48,7 @@
   const resposta2 = document.querySelector('input[name="resposta2"]:checked').value;
   const resposta3 = document.querySelector('input[name="resposta3"]:checked').value;
 
-  if (resposta1 === "a" && resposta2 === "b" && resposta3 === "b") {
+  if (resposta1 === "a" && resposta2 === "b" && resposta3 === "a") {
     window.location.href = "./paginaQuizCerto.html";
   } else {
     window.location.href = "pagina_incorreta.html";
