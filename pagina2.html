@@ -33,7 +33,8 @@
       <input type="radio" name="resposta3" value="b">B) Himalaias<br>
     </label>
 
-    <button type="submit" onclick="verificarRespostas(event)">Enviar</button>
+    <button type="submit" class="botao botao-submit" onclick="verificarRespostas(event)">Enviar</button>
+
   </form>
 
   <a href="./pagina3.html" class="botao" onclick="animarCoracoes(event)">Ir para a página 3</a>
@@ -116,10 +117,16 @@
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  }
+  width: 120px; /* ajuste a largura como desejado */
+  height: 40px; /* ajuste a altura como desejado */
+}
 
 .botao:hover {
   background-color: #0069d9;
+}
+
+.botao-submit {
+  width: 150px; /* Defina o valor desejado aqui */
 }
 
 body {
@@ -127,7 +134,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: scroll;
 }
 </style>
 </body>
