@@ -6,7 +6,7 @@
     <title>Parabéns, Mãe!</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body>
+  <body ontouchstart="" onmousedown="">
     <div class="container">
       <h1>Parabéns, Mãe! Te Amo</h1>
       <img src="./imagens/mae.paris.jpg" alt="Descrição da imagem" style="max-width: 50vw ;border: 5px solid black;">
@@ -17,84 +17,80 @@
     </div>
 
     <script>
-  function animarCoracoes(event) {
-    event.preventDefault();
-    const quantidadeCoracoes = 200;
-    const coracoes = [];
+      function animarCoracoes(event) {
+        event.preventDefault();
+        const quantidadeCoracoes = 200;
+        const coracoes = [];
 
-    const larguraPagina = document.body.clientWidth;
-    const alturaPagina = document.body.clientHeight;
+        const larguraPagina = document.body.clientWidth;
+        const alturaPagina = document.body.clientHeight;
 
-    for (let i = 0; i < quantidadeCoracoes; i++) {
-      const coracao = document.createElement('div');
-      coracao.classList.add('coracao');
-      coracao.style.left = Math.random() * larguraPagina + 'px';
-      coracao.style.top = -Math.random() * alturaPagina + 'px';
-      document.body.appendChild(coracao);
-      coracoes.push(coracao);
-    }
+        for (let i = 0; i < quantidadeCoracoes; i++) {
+          const coracao = document.createElement('div');
+          coracao.classList.add('coracao');
+          coracao.style.left = Math.random() * larguraPagina + 'px';
+          coracao.style.top = -Math.random() * alturaPagina + 'px';
+          document.body.appendChild(coracao);
+          coracoes.push(coracao);
+        }
 
-    setTimeout(() => {
-      coracoes.forEach((coracao) => {
-        coracao.remove();
-      });
-      window.location.href = event.target.href;
-    }, 3000);
-  }
-</script>
+        setTimeout(() => {
+          coracoes.forEach((coracao) => {
+            coracao.remove();
+          });
+          window.location.href = event.target.href;
+        }, 3000);
+      }
+    </script>
    
-<style>
-.coracao {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-image:  url(./imagens/coração.png);
-  background-size: contain;
-  animation-name: cair;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
+    <style>
+      .coracao {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-image:  url(./imagens/coração.png);
+        background-size: contain;
+        animation-name: cair;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
 
-@keyframes cair {
-  0% {
-    top: -50px;
-    opacity: 0;
-  }
-  50% {
-    top: 50%;
-    opacity: 1;
-  }
-  100% {
-    top: 110%;
-    opacity: 0;
-  }
-}
+      @keyframes cair {
+        0% {
+          top: -50px;
+          opacity: 0;
+        }
+        50% {
+          top: 50%;
+          opacity: 1;
+        }
+        100% {
+          top: 110%;
+          opacity: 0;
+        }
+      }
 
+      .botao {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
 
-.botao {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  }
+      .botao:hover {
+        background-color: #0069d9;
+      }
 
-.botao:hover {
-  background-color: #0069d9;
-}
-
- body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    touch-action: pan-y; /* Habilita o arrastar da tela vertical */
-  }
-
-}
-</style>
-</body>
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: scroll;
+      }
+    </style>
+  </body>
 </html>
