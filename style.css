@@ -1,0 +1,50 @@
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #c71585;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  @keyframes heart {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.3);
+    }
+    40% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.3);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+  
+  .coracao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url('./imagens/coração.png');
+    background-size: cover;
+    animation: heart 1s ease-in-out;
+  }
+  

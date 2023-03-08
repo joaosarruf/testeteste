@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="card">
+      <div class="front"></div>
+      <div class="back">
+        <div class="message">
+          <p>Hello Carol,</p>
+          <p>Hoje é o seu dia especial, e fiz isso para mostrar o quanto te amo!</p>
+          <p>Obrigado por todo amor e carinho que você me dá, por ser uma mãe dedicada e uma pessoa incrível.</p>
+          <p>Espero que tenha gostado, pq deu trabalho rsrsrs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const card = document.querySelector('.card');
+const flap = document.querySelector('.flap');
+const message = document.querySelector('.message');
+card.addEventListener('click', () => {
+  card.classList.toggle('open');
+  flap.classList.toggle('open');
+  message.classList.toggle('open');
+})
+  </script>
+  <style>
+    html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-color: #ccc;
+  transform-origin: top right;
+  transform: rotate(-30deg);
+}
+
+.card {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+.card.open {
+  transform: rotateY(-180deg);
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.message {
+  height: 80%;
+}
+
+.message p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+  </style>
+
+</html>
